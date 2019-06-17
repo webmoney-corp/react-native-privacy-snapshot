@@ -25,6 +25,10 @@ RCT_EXPORT_MODULE();
                                                      name:UIApplicationWillResignActiveNotification
                                                    object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleAppStateResignActive)
+                                                     name:UIApplicationDidEnterBackgroundNotification
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(handleAppStateActive)
                                                      name:UIApplicationDidBecomeActiveNotification
                                                    object:nil];
