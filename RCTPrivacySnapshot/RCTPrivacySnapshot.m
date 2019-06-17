@@ -44,7 +44,7 @@ RCT_EXPORT_MODULE();
 #pragma mark - App Notification Methods
 
 - (void)handleAppStateResignActive {
-    if (self->enabled) {
+    if (self->enabled && self->obfuscatingView == nil) {
         UIWindow    *keyWindow = [UIApplication sharedApplication].keyWindow;
         UIImageView *blurredScreenImageView = [[UIImageView alloc] initWithFrame:keyWindow.bounds];
         
